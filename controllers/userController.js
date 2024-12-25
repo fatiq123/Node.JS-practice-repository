@@ -44,6 +44,7 @@
 
 
 
+const Profile = require('../models/Profile');
 const User = require('../models/User');
 
 exports.getAllUsers = async (req, res) => {
@@ -68,6 +69,7 @@ exports.getUserById = async (req, res) => {
 exports.createUser = async (req, res) => {
     try {
         const newUser = await User.create(req.body);
+        await Profile.create({bio: req.body.bio, userId: newUser.id});
         res.status(201).json(newUser);
     } catch (error) {
         res.status(500).json({ message: error.message });
