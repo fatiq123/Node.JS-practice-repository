@@ -7,6 +7,10 @@ const Student = sequalize.define('Student', {
         type: DataTypes.STRING,
         allowNull: false,
     },
+    phoneNumber: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
     rollNumber: {
         type: DataTypes.STRING,
         allowNull: false,
