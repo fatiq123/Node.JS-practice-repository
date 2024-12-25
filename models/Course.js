@@ -9,7 +9,11 @@ const Course = sequalize.define('Course', {
     },
     description: {
         type: DataTypes.TEXT,
-    }
+    },
+    creditHours: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
 
 });
 
